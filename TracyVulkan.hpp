@@ -31,7 +31,11 @@ using TracyVkCtx = void*;
 
 #include <assert.h>
 #include <stdlib.h>
+#ifndef TRACY_CUSTOM_VULKAN_HEADER
 #include <vulkan/vulkan.h>
+#else
+#include TRACY_CUSTOM_VULKAN_HEADER
+#endif
 #include "Tracy.hpp"
 #include "client/TracyProfiler.hpp"
 #include "client/TracyCallstack.hpp"
